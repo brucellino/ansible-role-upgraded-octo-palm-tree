@@ -9,16 +9,14 @@ packer {
 }
 
 source "docker" "default" {
-  image  = "ubuntu:jammy"
+  image  = "public.ecr.aws/lts/ubuntu:focal"
   commit = true
   run_command = [
     "-d",
     "-i",
     "-t",
-    "--name",
-    "rabbitmq-test",
+    "--name=rabbitmq-test",
     "--entrypoint=/bin/sh",
-    "--",
     "{{.Image}}"
   ]
 }
@@ -29,9 +27,11 @@ build {
     "source.docker.default"
   ]
   provisioner "ansible" {
+    groups = ["test_hosts"]
     ansible_env_vars = [
       "ANSIBLE_ROLES_PATH=../../../"
     ]
     playbook_file = "./playbook.yml"
   }
+
 }

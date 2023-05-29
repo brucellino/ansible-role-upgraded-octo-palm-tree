@@ -1,5 +1,18 @@
 ---
-- hosts: rabbitmq-test
+- name: Prepare hosts
+  become: false
+  hosts: test_hosts
+  gather_facts: false
+  tasks:
+    - name: update python3
+      ansible.builtin.raw: apt-get update -y
+      args:
+        executable: /bin/bash
+    - name: Ensure python3 is present with raw command
+      ansible.builtin.raw: apt-get install -y python3 sudo
+      args:
+        executable: /bin/bash
+- hosts: test_hosts
   become: true
   name: Converge rabbit
   roles:
