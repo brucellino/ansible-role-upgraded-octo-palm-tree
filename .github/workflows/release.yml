@@ -1,5 +1,14 @@
 ---
 name: Release
+permissions:
+  actions: read
+  checks: write
+  contents: write
+  issues: write
+  packages: write
+  statuses: write
+  security-events: read
+  pull-requests: write
 on:
   push:
     branches:
