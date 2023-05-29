@@ -15,7 +15,6 @@
 - name: Ensure user rabbitmq is present with limited permissions
   ansible.builtin.user:
     name: "{{ rabbitmq_user }}"
-    password: "{{ password }}"
     shell: /bin/bash
     groups: "{{ rabbitmq_group }}"
     append: true
