@@ -1,6 +1,6 @@
 ansible==7.6.0
 ansible-core==2.15.0
-ansible-lint==6.15.0
+ansible-lint==6.16.2
 docker==6.1.2
 jmespath==1.0.1
 jsonschema==4.17.3
