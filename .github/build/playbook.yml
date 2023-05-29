@@ -1,5 +1,6 @@
 ---
 - hosts: rabbitmq-test
   become: true
+  name: Converge rabbit
   roles:
     - ansible-role-upgraded-octo-palm-tree

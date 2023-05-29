@@ -30,7 +30,7 @@ jobs:
         with:
           path: .github/build/playbook.yml
         env:
-          ANSIBLE_ROLES_PATH: "${PWD}/../../"
+          ANSIBLE_ROLES_PATH: "${PWD}/../../../"
   build:
     name: Build
     runs-on: ubuntu-latest
