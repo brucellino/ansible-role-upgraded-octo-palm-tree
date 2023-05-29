@@ -11,6 +11,16 @@ packer {
 source "docker" "default" {
   image  = "ubuntu:jammy"
   commit = true
+  run_command = [
+    "-d",
+    "-i",
+    "-t",
+    "--name",
+    "rabbitmq-test",
+    "--entrypoint=/bin/sh",
+    "--",
+    "{{.Image}}"
+  ]
 }
 
 build {
@@ -18,4 +28,10 @@ build {
   sources = [
     "source.docker.default"
   ]
+  provisioner "ansible" {
+    ansible_env_vars = [
+      "ANSIBLE_ROLES_PATH=../../../"
+    ]
+    playbook_file = "./playbook.yml"
+  }
 }

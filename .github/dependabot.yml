@@ -14,7 +14,7 @@ updates:
     reviewers:
       - "brucellino"
   - package-ecosystem: "pip"
-    directory: ".github/workflows"
+    directory: ".github/build"
     schedule:
       interval: "weekly"
     reviewers:

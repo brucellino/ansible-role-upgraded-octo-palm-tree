@@ -1,2 +1,31 @@
 ---
 # tasks file for ansible-role-template
+- name: Ensure that xz is present
+  ansible.builtin.package:
+    name: xz-utils
+    state: present
+- name: Ensure Erlang is installed
+  ansible.builtin.package:
+    name: erlang
+    state: present
+- name: "Ensure user is present"
+  ansible.builtin.group:
+    name: "{{ rabbitmq_group }}"
+    state: present
+- name: Ensure user rabbitmq is present with limited permissions
+  ansible.builtin.user:
+    name: "{{ rabbitmq_user }}"
+    password: "{{ password }}"
+    shell: /bin/bash
+    groups: "{{ rabbitmq_group }}"
+    append: true
+- name: Get Rabbitmq binary tarball for relevant architecture from releases url using unzip
+  ansible.builtin.unarchive:
+    src: "{{ rabbitmq_releases_url }}/download/v{{ rabbitmq_version }}/ rabbitmq-server-generic-unix-{{ rabbitmq_version }}.tar.xz"
+    dest: "{{ rabbitmq_install_dir }}"
+    creates: "{{ rabbitmq_install_dir }}/sbin/rabbitmqctl"
+    remote_src: true
+    validate_certs: true
+    mode: "0777"
+    owner: "{{ rabbitmq_user }}"
+    group: "{{ rabbitmq_group }}"

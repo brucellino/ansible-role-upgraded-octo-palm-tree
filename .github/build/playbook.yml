@@ -1,0 +1,5 @@
+---
+- hosts: rabbitmq-test
+  become: true
+  roles:
+    - ansible-role-upgraded-octo-palm-tree

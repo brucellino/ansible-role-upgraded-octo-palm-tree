@@ -1,2 +1,15 @@
 ---
 # defaults file for ansible-role-template
+rabbit_version: 3.11.16
+rabbitmq_releases_url: https://github.com/rabbitmq/rabbitmq-server/releases
+rabbitmq_install_dir: /opt/
+rabbitmq_group: rabbit
+rabbitmq_user: rabbit
+# This sets the minimum and maximum versions of erlang based on rabbit version
+erlang_versions:
+  3.12:
+    min: 25.0
+    max: 25.3
+  3.11:
+    min: 25.0
+    max:
