@@ -1,6 +1,6 @@
 ---
 # defaults file for ansible-role-template
-rabbit_version: 3.11.16
+rabbitmq_version: 3.11.16
 rabbitmq_releases_url: https://github.com/rabbitmq/rabbitmq-server/releases
 rabbitmq_install_dir: /opt/
 rabbitmq_group: rabbit

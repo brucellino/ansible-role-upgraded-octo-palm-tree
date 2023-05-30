@@ -20,7 +20,7 @@
     append: true
 - name: Get Rabbitmq binary tarball for relevant architecture from releases url using unzip
   ansible.builtin.unarchive:
-    src: "{{ rabbitmq_releases_url }}/download/v{{ rabbitmq_version }}/ rabbitmq-server-generic-unix-{{ rabbitmq_version }}.tar.xz"
+    src: "{{ rabbitmq_releases_url }}/download/v{{ rabbitmq_version }}/rabbitmq-server-generic-unix-{{ rabbitmq_version }}.tar.xz"
     dest: "{{ rabbitmq_install_dir }}"
     creates: "{{ rabbitmq_install_dir }}/sbin/rabbitmqctl"
     remote_src: true
