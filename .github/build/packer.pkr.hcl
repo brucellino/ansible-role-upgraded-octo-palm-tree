@@ -8,6 +8,24 @@ packer {
   }
 }
 
+variable "image_version" {
+  type = string
+  default = "latest"
+  description = "Version tag to be applied to the image artifact"
+}
+
+variable "reg_username" {
+  type = string
+  default = "brucellino"
+  description = "Username to log into the container registry."
+}
+
+variable "reg_password" {
+  type = string
+  default = env("GH_TOKEN")
+  description = "Password to log into the container registry."
+}
+
 source "docker" "default" {
   image  = "public.ecr.aws/lts/ubuntu:focal"
   commit = true
@@ -33,5 +51,16 @@ build {
     ]
     playbook_file = "./playbook.yml"
   }
-
+  post-processors {
+    post-processor "docker-tag" {
+      repository = "ghcr.io/brucellino/upgraded-octo-palm-tree"
+      tags = ["latest", var.image_version]
+    }
+    post-processor "docker-push" {
+      login = true
+      login_server = "https://ghcr.io/${var.reg_username}"
+      login_username = var.reg_username
+      login_password = var.reg_password
+    }
+  }
 }
