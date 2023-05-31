@@ -28,10 +28,11 @@ jobs:
           fetch-depth: 0
       - name: Ansible Lint
         uses: ansible-community/ansible-lint-action@v6.16.0
-        with:
-          path: .github/build/playbook.yml
-        env:
-          ANSIBLE_ROLES_PATH: "../../../"
+        # with:
+        #   path:
+        #     .github/build/playbook.yml
+        # env:
+        #   ANSIBLE_ROLES_PATH: "../../../"
   build:
     name: Build
     runs-on: ubuntu-latest
