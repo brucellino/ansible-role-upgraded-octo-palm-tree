@@ -3,6 +3,7 @@
   become: false
   hosts: test_hosts
   gather_facts: false
+  connection: paramiko
   tasks:
     - name: update python3
       ansible.builtin.raw: apt-get update -y
