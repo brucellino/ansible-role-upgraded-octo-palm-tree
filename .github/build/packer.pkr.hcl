@@ -51,9 +51,16 @@ build {
     groups = ["test_hosts"]
     ansible_env_vars = [
       "ANSIBLE_ROLES_PATH=../../../",
-      "ANSIBLE_HOST_KEY_CHECKING=False"
+      "ANSIBLE_HOST_KEY_CHECKING=False",
+      "ANSIBLE_CONNECTION=docker",
+      "ANSIBLE_REMOTE_USER=root"
     ]
     playbook_file = "./playbook.yml"
+    extra_arguments = [
+      "-e",
+      "ansible_connection=docker ansible_host=${source.name}",
+      "-u", "root"
+    ]
   }
   post-processors {
     post-processor "docker-tag" {
