@@ -58,7 +58,7 @@ build {
     playbook_file = "./playbook.yml"
     extra_arguments = [
       "-e",
-      "ansible_connection=docker ansible_host=${source.name}",
+      "ansible_connection=docker ansible_host=rabbitmq-test",
       "-u", "root"
     ]
   }
