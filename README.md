@@ -1,19 +1,6 @@
-<!-- Badges -->
-<!--
-
-If pre-commit ci is enabled, uncomment the badge below
-and replace with the repository name
-
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/owner/<repo>/main.svg)](https://results.pre-commit.ci/latest/github/owner/<repo>/main)
--->
-
-<!-- Actions status -->
-<!--
-If there are Github Actions, uncomment the line below to add the
-status badge
-[![main](https://github.com/owner/<repo>/actions/workflows/main.yml/badge.svg)](https://github.com/owner/<repo>/actions/workflows/main.yml)
--->
-[![semantic-release: angular](https://img.shields.io/badge/semantic--release-conventional-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/brucellino/ansible-role-upgraded-octo-palm-tree/main.svg)](https://results.pre-commit.ci/latest/github/brucellino/ansible-role-upgraded-octo-palm-tree/main)
+[![main](https://github.com/brucellino/ansible-role-upgraded-octo-palm-tree/actions/workflows/main.yml/badge.svg)](https://github.com/brucellino/ansible-role-upgraded-octo-palm-tree/actions/workflows/release.yml)
+[![semantic-release: conventional](https://img.shields.io/badge/semantic--release-conventional-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 # Ansible role XYZ
 
