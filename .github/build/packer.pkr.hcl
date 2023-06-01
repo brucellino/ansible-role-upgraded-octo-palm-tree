@@ -58,8 +58,7 @@ build {
     playbook_file = "./playbook.yml"
     extra_arguments = [
       "-e",
-      "ansible_connection=docker ansible_host=rabbitmq-test",
-      "-u", "root"
+      "ansible_connection=docker ansible_host=rabbitmq-test"
     ]
   }
   post-processors {
