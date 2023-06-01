@@ -1,10 +1,10 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/brucellino/ansible-role-upgraded-octo-palm-tree/main.svg)](https://results.pre-commit.ci/latest/github/brucellino/ansible-role-upgraded-octo-palm-tree/main)
-[![main](https://github.com/brucellino/ansible-role-upgraded-octo-palm-tree/actions/workflows/main.yml/badge.svg)](https://github.com/brucellino/ansible-role-upgraded-octo-palm-tree/actions/workflows/release.yml)
+[![Release](https://github.com/brucellino/ansible-role-upgraded-octo-palm-tree/actions/workflows/release.yml/badge.svg)](https://github.com/brucellino/ansible-role-upgraded-octo-palm-tree/actions/workflows/release.yml)
 [![semantic-release: conventional](https://img.shields.io/badge/semantic--release-conventional-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-# Ansible role XYZ
+# Ansible role Upgraded Octo Palm Tree
 
-<!-- A brief description of the role goes here. -->
+This is an deliberately obfuscated role. It is created for obscure purposes
 
 ## Requirements
 
