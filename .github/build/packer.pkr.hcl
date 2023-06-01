@@ -43,7 +43,7 @@ source "docker" "default" {
 }
 
 build {
-  name = "default"
+  name = "rabbitmq-test"
   sources = [
     "source.docker.default"
   ]
