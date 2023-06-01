@@ -3,6 +3,7 @@
   become: false
   hosts: test_hosts
   gather_facts: false
+  remote_user: root
   connection: paramiko
   tasks:
     - name: update python3
