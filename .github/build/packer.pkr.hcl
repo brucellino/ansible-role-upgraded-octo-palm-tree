@@ -50,7 +50,8 @@ build {
   provisioner "ansible" {
     groups = ["test_hosts"]
     ansible_env_vars = [
-      "ANSIBLE_ROLES_PATH=../../../"
+      "ANSIBLE_ROLES_PATH=../../../",
+      "ANSIBLE_HOST_KEY_CHECKING=False"
     ]
     playbook_file = "./playbook.yml"
   }
