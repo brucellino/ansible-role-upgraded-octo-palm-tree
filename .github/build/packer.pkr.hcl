@@ -30,7 +30,7 @@ source "docker" "default" {
   image  = "public.ecr.aws/lts/ubuntu:focal"
   commit = true
   changes = [
-    "LABEL org.opencontainers.image.source https://github.com/brucellino/ansible-role-upgaded-octo-palm-tree"
+    "LABEL org.opencontainers.image.source https://github.com/brucellino/ansible-role-upgraded-octo-palm-tree"
   ]
   run_command = [
     "-d",
@@ -58,7 +58,9 @@ build {
     playbook_file = "./playbook.yml"
     extra_arguments = [
       "-e",
-      "ansible_connection=docker ansible_host=rabbitmq-test"
+      "ansible_connection=docker",
+      "-e", "ansible_host=rabbitmq-test",
+      "-e", "ansible_user=root"
     ]
   }
   post-processors {
