@@ -53,7 +53,9 @@ jobs:
         run: ../../packer validate .
       - name: Build image
         working-directory: .github/build
-        run: ../../packer build -var reg_password=${{ secrets.GITHUB_TOKEN }} .
+        run: ../../packer build .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release:
     name: Release
     runs-on: ubuntu-latest

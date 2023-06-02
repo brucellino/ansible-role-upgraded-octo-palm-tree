@@ -22,7 +22,7 @@ variable "reg_username" {
 
 variable "reg_password" {
   type        = string
-  default     = env("GH_TOKEN")
+  default     = env("GITHUB_TOKEN")
   description = "Password to log into the container registry."
 }
 
@@ -70,7 +70,7 @@ build {
     }
     post-processor "docker-push" {
       login          = true
-      login_server   = "https://ghcr.io/${var.reg_username}"
+      login_server   = "https://ghcr.io/"
       login_username = var.reg_username
       login_password = var.reg_password
     }
