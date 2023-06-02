@@ -65,7 +65,7 @@ build {
   }
   post-processors {
     post-processor "docker-tag" {
-      repository = "ghcr.io/brucellino/upgraded-octo-palm-tree"
+      repository = "ghcr.io/brucellino/ansible-role-upgraded-octo-palm-tree"
       tags       = ["latest", var.image_version]
     }
     post-processor "docker-push" {
