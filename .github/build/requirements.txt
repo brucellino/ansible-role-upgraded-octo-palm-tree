@@ -1,4 +1,4 @@
-ansible==8.2.0
+ansible==8.3.0
 ansible-core==2.15.3
 ansible-lint==6.17.2
 docker==6.1.3
