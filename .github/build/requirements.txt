@@ -1,5 +1,5 @@
 ansible==8.2.0
-ansible-core==2.15.2
+ansible-core==2.15.3
 ansible-lint==6.17.2
 docker==6.1.3
 jmespath==1.0.1
